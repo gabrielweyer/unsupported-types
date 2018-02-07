@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>TableStorage.UnsupportedTypes</PackageId>
+    <Authors>Gabriel Weyer</Authors>
+    <Description>Allows to store unsupported data types in Azure Table storage.</Description>
+    <PackageTags>Azure Table storage</PackageTags>
+    <PackageProjectUrl>https://github.com/gabrielweyer/unsupported-types</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/gabrielweyer/unsupported-types</RepositoryUrl>
+    <copyright>Copyright © Azure Table storage Unsupported Types contributors</copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="WindowsAzure.Storage" Version="8.7.0" />
+  </ItemGroup>
+</Project>
