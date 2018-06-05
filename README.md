@@ -6,7 +6,7 @@
 
 | CI | Status | Platform(s) | Framework(s) | Test Framework(s) |
 | --- | --- | --- | --- | --- |
-| [AppVeyor][app-veyor] | [![Build Status][app-veyor-shield]][app-veyor] | `Windows` | `nestandard2.0` | `netcoreapp2.0.5` |
+| [AppVeyor][app-veyor] | [![Build Status][app-veyor-shield]][app-veyor] | `Windows` | `nestandard2.0` | `netcoreapp2.1.0` |
 
 [Azure Table storage][table-storage] supports a [limited set of data types][supported-types] (namely `byte[]`, `bool`, `DateTime`, `double`, `Guid`, `int`, `long` and `string`). `Unsupported Types` allows to store unsupported data types with some limitations:
 
@@ -37,7 +37,7 @@ public class UnsupportedTypesTestTableEntity : UnsupportedTypesTableEntity
 
 There is a console application in [src/SampleConsole](src/SampleConsole) demonstrating `Unsupported Types`:
 
-- You'll need Latest version of the [Azure storage emulator][azure-storage-emulator]
+- You'll need the [Azure storage emulator][azure-storage-emulator] **5.5** or later
   - Alternatively you can use a [storage account][create-storage-account] and modify `AzureTableStorage:ConnectionString` accordingly in `appsettings.json`
 
 ### Output of the console
