@@ -10,6 +10,6 @@
     <copyright>Copyright © Azure Table storage Unsupported Types contributors</copyright>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="WindowsAzure.Storage" Version="9.2.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>
 </Project>
