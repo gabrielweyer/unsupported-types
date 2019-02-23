@@ -77,5 +77,5 @@ install:
   # Cake build is targeting `.NET Core` `2.2.0`, so we can safely install the latest `SDK`
   # The `SDK` is required to restore, build, publish... a `.NET Core` application
   # https://www.microsoft.com/net/download/windows
-  - ps: .\build\dotnet-install.ps1 -Channel Current -Version latest
+  - ps: .\build\dotnet-install.ps1 -Channel 2.2 -Version 2.2.104
   - ps: dotnet tool install --global Cake.Tool --version 0.31.0
