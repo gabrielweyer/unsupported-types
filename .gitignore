@@ -10,9 +10,9 @@ bin/
 
 # Cake
 
-tools/*
-!tools/packages.config
-
-# Build
-
+tools/
 artifacts/
+
+# Visual Studio
+
+.vs/
