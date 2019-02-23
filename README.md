@@ -6,7 +6,7 @@
 
 | CI | Status | Platform(s) | Framework(s) | Test Framework(s) |
 | --- | --- | --- | --- | --- |
-| [AppVeyor][app-veyor] | [![Build Status][app-veyor-shield]][app-veyor] | `Windows` | `nestandard2.0` | `netcoreapp2.2.0` |
+| [AppVeyor][app-veyor] | [![Build Status][app-veyor-shield]][app-veyor] | `Windows` | `nestandard2.0` | `netcoreapp2.2.2` |
 
 [Azure Table storage][table-storage] supports a [limited set of data types][supported-types] (namely `byte[]`, `bool`, `DateTime`, `double`, `Guid`, `int`, `long` and `string`). `Unsupported Types` allows to store unsupported data types with some limitations:
 
@@ -58,6 +58,30 @@ You will not be able to [filter][filter] the entities using the unsupported type
 
 Each read and write to `Azure Table storage` will trigger the use of `Reflection`. This could be improved by caching the unsupported properties, in this case the scan would happen once per application lifetime.
 
+## Running locally
+
+### Pre-requisites
+
+- [.NET Core SDK v2.2.104][dotnet-sdk] and higher
+
+### Initial setup on Windows
+
+```posh
+.\bootstrap.ps1
+```
+
+### Initial setup on Linux / OS X
+
+```bash
+./bootstrap.sh
+```
+
+### Run build script
+
+```bash
+dotnet cake build.cake
+```
+
 [table-storage]: https://docs.microsoft.com/en-au/azure/cosmos-db/table-storage-overview
 [supported-types]: https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-the-table-service-data-model#property-types
 [property-limitations]: https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-the-table-service-data-model#property-limitations
@@ -74,3 +98,4 @@ Each read and write to `Azure Table storage` will trigger the use of `Reflection
 [create-storage-account]: https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=portal
 [console-screenshot]: docs/console.png
 [storage-screenshot]: docs/storage.png
+[dotnet-sdk]: https://dotnet.microsoft.com/download
