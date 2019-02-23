@@ -1,8 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.RetryPolicies;
+using Microsoft.WindowsAzure.Storage.Table;
 using TableStorage.UnsupportedTypes.SampleConsole.Storage;
 
 namespace TableStorage.UnsupportedTypes.SampleConsole.Configuration
@@ -22,7 +25,13 @@ namespace TableStorage.UnsupportedTypes.SampleConsole.Configuration
             var tableClient = storageAccount.CreateCloudTableClient();
             var table = tableClient.GetTableReference(nameof(UnsupportedTypesTestTableEntity));
 
-            await table.CreateIfNotExistsAsync();
+            var options = new TableRequestOptions
+            {
+                RetryPolicy = new NoRetry(),
+                ServerTimeout = TimeSpan.FromSeconds(1)
+            };
+
+            await table.CreateIfNotExistsAsync(options, new OperationContext());
 
             services.AddSingleton(table);
         }

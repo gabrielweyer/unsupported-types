@@ -6,7 +6,7 @@
 
 | CI | Status | Platform(s) | Framework(s) | Test Framework(s) |
 | --- | --- | --- | --- | --- |
-| [AppVeyor][app-veyor] | [![Build Status][app-veyor-shield]][app-veyor] | `Windows` | `nestandard2.0` | `netcoreapp2.2.0` |
+| [AppVeyor][app-veyor] | [![Build Status][app-veyor-shield]][app-veyor] | `Windows` | `nestandard2.0` | `netcoreapp2.2.2` |
 
 [Azure Table storage][table-storage] supports a [limited set of data types][supported-types] (namely `byte[]`, `bool`, `DateTime`, `double`, `Guid`, `int`, `long` and `string`). `Unsupported Types` allows to store unsupported data types with some limitations:
 
