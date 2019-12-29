@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using TableStorage.UnsupportedTypes.SampleConsole.Configuration;
@@ -48,7 +47,7 @@ namespace TableStorage.UnsupportedTypes.SampleConsole
             Console.WriteLine("Exception: {0}", e.GetType());
             Console.WriteLine("Message: {0}", e.Message);
             Console.WriteLine("StackTrace:");
-            Console.WriteLine(e.Demystify().StackTrace);
+            Console.WriteLine(e.StackTrace);
             Console.WriteLine();
 
             _innerExceptionCount++;
