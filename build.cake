@@ -1,6 +1,6 @@
-#module nuget:?package=Cake.DotNetTool.Module&version=0.1.0
+#module nuget:?package=Cake.DotNetTool.Module&version=0.4.0
 
-#tool dotnet:?package=GitVersion.Tool&version=4.0.1-beta1-58
+#tool dotnet:?package=GitVersion.Tool&version=5.1.3
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
@@ -78,21 +78,20 @@ Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        var settings = new DotNetCoreToolSettings();
-
-        var argumentsBuilder = new ProcessArgumentBuilder()
-            .Append("-configuration")
-            .Append(configuration)
-            .Append("-nobuild");
+        var settings = new DotNetCoreTestSettings
+        {
+            Configuration = configuration,
+            NoBuild = true
+        };
 
         var projectFiles = GetFiles("./tests/*/*.Tests.csproj");
 
         foreach (var projectFile in projectFiles)
         {
             var testResultsFile = testsResultsDir.Combine($"{projectFile.GetFilenameWithoutExtension()}.xml");
-            var arguments = $"{argumentsBuilder.Render()} -xml \"{testResultsFile}\"";
+            settings.Logger = $"\"xunit;LogFilePath={testResultsFile}\"";
 
-            DotNetCoreTool(projectFile, "xunit", arguments, settings);
+            DotNetCoreTest(projectFile.FullPath, settings);
         }
     });
 

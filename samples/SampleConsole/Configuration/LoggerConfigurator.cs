@@ -12,7 +12,6 @@ namespace TableStorage.UnsupportedTypes.SampleConsole.Configuration
 
             var loggerConfiguration = new LoggerConfiguration()
                 .MinimumLevel.Is(serilogLevel)
-                .Enrich.WithDemystifiedStackTraces()
                 .WriteTo.Console(serilogLevel);
 
             var logger = loggerConfiguration.CreateLogger();

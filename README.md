@@ -6,7 +6,7 @@
 
 | CI | Status | Platform(s) | Framework(s) | Test Framework(s) |
 | --- | --- | --- | --- | --- |
-| [AppVeyor][app-veyor] | [![Build Status][app-veyor-shield]][app-veyor] | `Windows` | `nestandard2.0` | `netcoreapp2.2.2` |
+| [AppVeyor][app-veyor] | [![Build Status][app-veyor-shield]][app-veyor] | `Windows` | `nestandard2.0` | `netcoreapp3.1` |
 
 [Azure Table storage][table-storage] supports a [limited set of data types][supported-types] (namely `byte[]`, `bool`, `DateTime`, `double`, `Guid`, `int`, `long` and `string`). `Unsupported Types` allows to store unsupported data types with some limitations:
 
@@ -62,11 +62,11 @@ Each read and write to `Azure Table storage` will trigger the use of `Reflection
 
 ### Pre-requisites
 
-- [.NET Core SDK v2.2.104][dotnet-sdk] and higher
+- [.NET Core SDK v3.1.100][dotnet-sdk] and higher
 
 ### Initial setup on Windows
 
-```posh
+```powershell
 .\bootstrap.ps1
 ```
 
