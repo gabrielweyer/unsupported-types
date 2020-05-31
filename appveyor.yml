@@ -54,7 +54,7 @@ deploy:
       # https://www.appveyor.com/docs/deployment/nuget/#provider-settings
       secure: GJWQFa9r9CPMzyUgy2luQqa8Yh6UnYLfuDHyG6Xb3YAiU79MpRXeBOiKnSgjD0Ac
     skip_symbols: false
-    symbol_server: https://nuget.smbsrc.net/
+    symbol_server: https://www.nuget.org/api/v2/symbolpackage
     artifact: packages
     on:
       branch: master
