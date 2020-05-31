@@ -5,6 +5,7 @@ branches:
     # We'll also build whenever there is a new commit on any branch starting with `features/`
     - /features\/.+/
 build_script:
+  - ps: dotnet restore
   - ps: dotnet cake build.cake --bootstrap
   - ps: dotnet cake build.cake --pack
 assembly_info:
@@ -77,4 +78,4 @@ install:
   # Unsupported Types build is targeting `netstandard2.0`, so we can safely install the LTS `SDK`
   # The `SDK` is required to restore, build, publish... a `.NET Core` application
   # https://www.microsoft.com/net/download/windows
-  - ps: .\build\dotnet-install.ps1
+  - ps: .\build\dotnet-install.ps1 -InstallDir 'C:\Program Files\dotnet\'
