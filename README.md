@@ -62,7 +62,7 @@ Each read and write to `Azure Table storage` will trigger the use of `Reflection
 
 ### Pre-requisites
 
-- [.NET Core SDK v3.1.100][dotnet-sdk] and higher
+- [.NET Core SDK v3.1.300][dotnet-sdk] and higher
 
 ### Initial setup on Windows
 
