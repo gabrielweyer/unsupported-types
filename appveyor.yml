@@ -5,6 +5,7 @@ branches:
     # We'll also build whenever there is a new commit on any branch starting with `features/`
     - /features\/.+/
 build_script:
+  - ps: dotnet tool restore
   - ps: dotnet cake build.cake --bootstrap
   - ps: dotnet cake build.cake --pack
 assembly_info:
@@ -51,7 +52,7 @@ deploy:
     api_key:
       # Encrypted `NuGet.org` token - https://www.nuget.org/account/ApiKeys
       # https://www.appveyor.com/docs/deployment/nuget/#provider-settings
-      secure: gO++14gsWVOdYLR/xQcXJNuzWXSeiZ6PCpKWZf0uugkKTtDCAQ8Galxk4QGrSh5p
+      secure: GJWQFa9r9CPMzyUgy2luQqa8Yh6UnYLfuDHyG6Xb3YAiU79MpRXeBOiKnSgjD0Ac
     skip_symbols: false
     symbol_server: https://nuget.smbsrc.net/
     artifact: packages
@@ -77,5 +78,4 @@ install:
   # Unsupported Types build is targeting `netstandard2.0`, so we can safely install the LTS `SDK`
   # The `SDK` is required to restore, build, publish... a `.NET Core` application
   # https://www.microsoft.com/net/download/windows
-  - ps: .\build\dotnet-install.ps1
-  - ps: dotnet tool install --global Cake.Tool --version 0.35.0
+  - ps: .\build\dotnet-install.ps1 -InstallDir 'C:\Program Files\dotnet\'
