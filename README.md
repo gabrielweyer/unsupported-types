@@ -15,6 +15,8 @@
 
 This is distributed via a `NuGet` package but the implementation is so simple that you can just copy the classes into your own solution if that works better for you.
 
+:rotating_light: I'm using the legacy [WindowsAzure.Storage][windows-azure-storage] `NuGet` package, let me know if there is interest in using [Microsoft.Azure.Cosmos.Table][microsoft-azure-cosmos-table] instead.
+
 ## How it works
 
 1. Your `TableEntity` should inherit from `UnsupportedTypesTableEntity`
@@ -99,3 +101,5 @@ dotnet cake build.cake
 [console-screenshot]: docs/console.png
 [storage-screenshot]: docs/storage.png
 [dotnet-sdk]: https://dotnet.microsoft.com/download
+[windows-azure-storage]: https://www.nuget.org/packages/WindowsAzure.Storage
+[microsoft-azure-cosmos-table]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table
